@@ -34,7 +34,7 @@ db.products.insertMany([
     price: 60,
     brand: "FarmFresh",
     details: {
-      expiry_date: ISODate("2024-12-01"),
+      expiry_date: new Date("2024-12-01"),
       weight: "1L",
       is_organic: true
     },
@@ -59,7 +59,7 @@ db.products.find({
 
 db.products.find({
   category: "Groceries",
-  "details.expiry_date": { $lt: ISODate("2025-01-01") }
+  "details.expiry_date": { $lt: new Date("2025-01-01") }
 });
 
 
