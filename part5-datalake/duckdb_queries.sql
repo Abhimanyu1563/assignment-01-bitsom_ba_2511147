@@ -19,7 +19,7 @@ SELECT
 FROM read_json_auto('orders.json') o
 JOIN read_csv_auto('customers.csv') c
     ON o.customer_id = c.customer_id
-GROUP BY c.customer_name
+GROUP BY c.customer_id, c.customer_name
 ORDER BY total_order_value DESC
 LIMIT 3;
 
